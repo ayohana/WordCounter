@@ -5,6 +5,11 @@ namespace WordCounter.Models
     public string SearchFor { get; set; }
     public string Sentence { get; set; }
 
+    public RepeatCounter(string searchFor)
+    {
+      SearchFor = searchFor.ToLower();
+    }
+
     public RepeatCounter(string searchFor, string sentence)
     {
       SearchFor = searchFor.ToLower();
