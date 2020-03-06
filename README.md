@@ -28,7 +28,7 @@
 | **Program Counts Full Word Matches Only** | cat, I'm walking to the cathedral | 0 match for cat |
 | **Program Is Case Insensitive** | Cat, My black cAt loves me | 1 match for cat |
 | **Program Returns Invalid Input if Word Input Consists of Multiple Words** | black cat | Invalid input. Please enter 1 word only. |
-| **Program Returns Invalid Input if Word Input is Empty** | `no input given` | Invalid input. Please enter a word. |
+| **Program Returns Invalid Input if Word Input is Null or Empty** | `no input` | Invalid input. Please enter 1 word only. |
 
 </details>
 
