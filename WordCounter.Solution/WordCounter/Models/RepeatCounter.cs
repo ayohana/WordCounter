@@ -1,8 +1,20 @@
+using System;
+
 namespace WordCounter.Models
 {
   public class RepeatCounter
   {
-    // properties, constructors, methods, etc. go here
+    public string SearchFor { get; set; }
+    public string Sentence { get; set; }
+    public RepeatCounter(string searchFor, string sentence)
+    {
+
+    }
+
+    public int FindWord()
+    {
+      return 10;
+    }
     
   }
 }
