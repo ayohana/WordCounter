@@ -26,7 +26,8 @@
 | **Program Finds the Word and Counts a Single Match** | cat, My black cat loves me | 1 match for cat |
 | **Program Continues Search and Counts Multiple Matches** | cat, My black cat and my white cat love their toys more than me | 2 matches for cat |
 | **Program Counts Full Word Matches Only** | cat, I'm walking to the cathedral | 0 match for cat |
-| **Program Disregards Lower/Upper Cases** | Cat, My black cAt loves me | 1 match for cat |
+| **Program Is Case Insensitive** | Cat, My black cAt loves me | 1 match for cat |
+| **Program Gathers Single Word Input Only** | black cat, My black cat loves me | Invalid input. Please enter 1 word only. |
 
 </details>
 
