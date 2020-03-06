@@ -28,12 +28,30 @@ namespace WordCounter.Tests
     [TestMethod]
     public void GetSentence_ReturnsSentence_String()
     {
-      string expected = "My black cat loves me";
+      string expected = "my black cat loves me";
       RepeatCounter newRepeatCounter = new RepeatCounter("cat", expected);
 
       string actual = newRepeatCounter.Sentence;
 
       Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void ContainsWord_ReturnsTrueForSentenceContainingWord_Boolean()
+    {
+      RepeatCounter newRepeatCounter = new RepeatCounter("cat", "My black cat loves me");
+      bool actual = newRepeatCounter.ContainsWord();
+
+      Assert.IsTrue(actual);
+    }
+
+    [TestMethod]
+    public void ContainsWord_ReturnsFalseForSentenceNotContainingWord_Boolean()
+    {
+      RepeatCounter newRepeatCounter = new RepeatCounter("cat", "My black dog loves me");
+      bool actual = newRepeatCounter.ContainsWord();
+
+      Assert.IsFalse(actual);
     }
 
     [TestMethod]
