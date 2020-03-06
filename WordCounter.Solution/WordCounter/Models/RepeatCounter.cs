@@ -11,9 +11,9 @@ namespace WordCounter.Models
       Sentence = sentence.ToLower();
     }
 
-    public bool CheckWordInput()
+    public bool IsInvalidInput()
     {
-      return false;
+      return SearchFor.Contains(" ");
     }
     
     public bool ContainsWord()
