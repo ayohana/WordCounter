@@ -18,7 +18,14 @@ namespace WordCounter.Models
 
     public bool IsInvalidInput()
     {
-      return SearchFor.Contains(" ");
+      if (!SearchFor.Contains(" ") && !string.IsNullOrEmpty(SearchFor))
+      {
+        return false;
+      }
+      else
+      {
+        return true;
+      }
     }
     
     public bool ContainsWord()
@@ -39,6 +46,5 @@ namespace WordCounter.Models
       }
       return matchCount;
     }
-    
   }
 }
