@@ -34,34 +34,35 @@ namespace WordCounter
 
     public static void AskUser()
     {
-      Console.WriteLine("Enter a word you'd like to search for:");
+      Console.WriteLine(">>> Enter a word you'd like to search for:");
       string searchFor = Console.ReadLine();
-      Console.WriteLine("Enter a sentence:");
-      string sentence = Console.ReadLine();
-      newRepeatCounter = new RepeatCounter(searchFor, sentence);
+      newRepeatCounter = new RepeatCounter(searchFor);
+      if (newRepeatCounter.IsInvalidInput())
+      {
+        Console.WriteLine(">>> Invalid input. Please enter only 1 word.");
+        AskUser();
+      }
+      else
+      {
+        Console.WriteLine(">>> Enter a sentence:");
+        string sentence = Console.ReadLine();
+        newRepeatCounter = new RepeatCounter(searchFor, sentence);
+      }
     }
 
     public static void DisplayMessage()
     {
-      if (newRepeatCounter.IsInvalidInput())
+      if (!newRepeatCounter.ContainsWord())
       {
-        Console.WriteLine("Invalid input. Please try again.");
-        // break and have user try again immediately
+        Console.WriteLine(">>> Sorry, no match was found. :(");
+      }
+      else if (newRepeatCounter.ContainsWord())
+      {
+        Console.WriteLine($">>> {newRepeatCounter.FindWord()} match(es) for {newRepeatCounter.SearchFor}");
       }
       else
       {
-        if (!newRepeatCounter.ContainsWord())
-        {
-          Console.WriteLine("Sorry, this sentence absolutely does not contain the word you are looking for.");
-        }
-        else if (newRepeatCounter.ContainsWord())
-        {
-          Console.WriteLine($"{newRepeatCounter.FindWord()} match(es) for {newRepeatCounter.SearchFor}");
-        }
-        else
-        {
-          Console.WriteLine("Invalid input. Please try again.");
-        }
+        Console.WriteLine(">>> Invalid input. Please try again.");
       }
     }
   }
