@@ -116,5 +116,22 @@ namespace WordCounter.Tests
       Assert.IsTrue(actual);
     }
 
+    [TestMethod]
+    public void IsInvalidInput_ReturnsTrueForNull_Boolean()
+    {
+      RepeatCounter newRepeatCounter = new RepeatCounter(null, "My black cat loves me");
+      bool actual = newRepeatCounter.IsInvalidInput();
+
+      Assert.IsTrue(actual);
+    }
+
+    [TestMethod]
+    public void IsInvalidInput_ReturnsTrueForEmptyString_Boolean()
+    {
+      RepeatCounter newRepeatCounter = new RepeatCounter("", "My black cat loves me");
+      bool actual = newRepeatCounter.IsInvalidInput();
+
+      Assert.IsTrue(actual);
+    }
   }
 }
