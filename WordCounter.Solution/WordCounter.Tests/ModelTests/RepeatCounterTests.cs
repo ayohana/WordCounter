@@ -98,5 +98,23 @@ namespace WordCounter.Tests
       Assert.AreEqual(expected, actual);
     }
 
+    [TestMethod]
+    public void CheckWordInput_ReturnsTrueForSingleWordInput_Boolean()
+    {
+      RepeatCounter newRepeatCounter = new RepeatCounter("cat", "My black cat loves me");
+      bool actual = newRepeatCounter.CheckWordInput();
+
+      Assert.IsTrue(actual);
+    }
+
+    [TestMethod]
+    public void CheckWordInput_ReturnsFalseForMultipleWordsInput_Boolean()
+    {
+      RepeatCounter newRepeatCounter = new RepeatCounter("black cat", "My black cat loves me");
+      bool actual = newRepeatCounter.CheckWordInput();
+
+      Assert.IsFalse(actual);
+    }
+
   }
 }
