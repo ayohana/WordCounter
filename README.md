@@ -21,8 +21,7 @@
 | :-------------     | :------------- | :------------- |
 | **Program Gathers and Stores User Input of Word to Search For** | cat | `Stored:` cat |
 | **Program Gathers and Stores User Input of a Sentence** | My black cat loves me | `Stored:` My black cat loves me |
-| **Program Finds the Word and Stores Start Index Number of the Word** | cat, My black cat loves me | `Stored:` 9 |
-| **Program Counts Number of Matches** | cat, My black cat loves me | 1 match for cat |
+| **Program Finds the Word and Counts a Single Match** | cat, My black cat loves me | 1 match for cat |
 | **Program Continues Search and Counts Multiple Matches** | cat, My black cat and my white cat love their toys more than me | 2 matches for cat |
 | **Program Counts Full Word Matches Only** | cat, I'm walking to the cathedral | 0 match for cat |
 | **Program Disregards Lower/Upper Cases** | Cat, My black cAt loves me | 1 match for cat |
