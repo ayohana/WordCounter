@@ -16,15 +16,15 @@ namespace WordCounter.Models
       Sentence = sentence.ToLower();
     }
 
-    public bool IsInvalidInput()
+    public bool IsValidInput()
     {
-      if (!SearchFor.Contains(" ") && !string.IsNullOrEmpty(SearchFor))
+      if (!SearchFor.Contains(" ") && !string.IsNullOrWhiteSpace(SearchFor) && !string.IsNullOrEmpty(SearchFor))
       {
-        return false;
+        return true;
       }
       else
       {
-        return true;
+        return false;
       }
     }
     

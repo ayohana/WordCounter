@@ -42,16 +42,16 @@ namespace WordCounter
       Console.WriteLine(">>> Enter a word to search for:");
       string searchFor = Console.ReadLine();
       newRepeatCounter = new RepeatCounter(searchFor);
-      if (newRepeatCounter.IsInvalidInput())
-      {
-        Console.WriteLine(">>> Invalid input. Please enter only 1 word.");
-        AskUser();
-      }
-      else
+      if (newRepeatCounter.IsValidInput())
       {
         Console.WriteLine(">>> Enter a sentence:");
         string sentence = Console.ReadLine();
         newRepeatCounter = new RepeatCounter(searchFor, sentence);
+      }
+      else
+      {
+        Console.WriteLine(">>> Invalid input. Please enter only 1 word.");
+        AskUser();
       }
     }
 
