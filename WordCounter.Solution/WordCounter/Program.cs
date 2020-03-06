@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using WordCounter.Models;
 
 namespace WordCounter
@@ -10,9 +9,19 @@ namespace WordCounter
 
     public static void Main()
     {
-      Welcome();
-      AskUser();
-      DisplayMessage();
+      try
+      {
+        Welcome();
+        AskUser();
+        DisplayMessage();
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine("Message = {0}", ex.Message);
+        Console.WriteLine("Source = {0}", ex.Source);
+        Console.WriteLine("StackTrace = {0}", ex.StackTrace);
+        Console.WriteLine("TargetSite = {0}", ex.TargetSite);
+      }
     }
 
     public static void Welcome()
