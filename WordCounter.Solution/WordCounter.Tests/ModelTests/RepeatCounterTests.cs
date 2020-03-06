@@ -46,5 +46,39 @@ namespace WordCounter.Tests
       
       Assert.AreEqual(expected, actual);
     }
+
+    [TestMethod]
+    public void FindWord_ReturnsMultipleMatches_MatchCount()
+    {
+      int expected = 2;
+      RepeatCounter newRepeatCounter = new RepeatCounter("cat", "My black cat and my white cat love their toys more than me");
+
+      int actual = newRepeatCounter.FindWord();
+      
+      Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void FindWord_ReturnsFullWordMatchesOnly_MatchCount()
+    {
+      int expected = 0;
+      RepeatCounter newRepeatCounter = new RepeatCounter("cat", "I'm walking to the cathedral");
+
+      int actual = newRepeatCounter.FindWord();
+      
+      Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void FindWord_SearchIsNotCaseSensitive_MatchCount()
+    {
+      int expected = 1;
+      RepeatCounter newRepeatCounter = new RepeatCounter("Cat", "My black cAt loves me");
+
+      int actual = newRepeatCounter.FindWord();
+      
+      Assert.AreEqual(expected, actual);
+    }
+
   }
 }
