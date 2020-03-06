@@ -43,17 +43,25 @@ namespace WordCounter
 
     public static void DisplayMessage()
     {
-      if (!newRepeatCounter.ContainsWord())
+      if (newRepeatCounter.IsInvalidInput())
       {
-        Console.WriteLine("Sorry, this sentence does not contain the word you are looking for.");
-      }
-      else if (newRepeatCounter.ContainsWord())
-      {
-        Console.WriteLine(newRepeatCounter.FindWord());
+        Console.WriteLine("Invalid input. Please try again.");
+        // break and have user try again immediately
       }
       else
       {
-        Console.WriteLine("Invalid input. Please try again.");
+        if (!newRepeatCounter.ContainsWord())
+        {
+          Console.WriteLine("Sorry, this sentence absolutely does not contain the word you are looking for.");
+        }
+        else if (newRepeatCounter.ContainsWord())
+        {
+          Console.WriteLine($"{newRepeatCounter.FindWord()} match(es) for {newRepeatCounter.SearchFor}");
+        }
+        else
+        {
+          Console.WriteLine("Invalid input. Please try again.");
+        }
       }
     }
   }
