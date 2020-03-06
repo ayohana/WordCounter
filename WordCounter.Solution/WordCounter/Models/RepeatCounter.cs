@@ -10,6 +10,11 @@ namespace WordCounter.Models
       SearchFor = searchFor.ToLower();
       Sentence = sentence.ToLower();
     }
+
+    public bool CheckWordInput()
+    {
+      return false;
+    }
     
     public bool ContainsWord()
     {
