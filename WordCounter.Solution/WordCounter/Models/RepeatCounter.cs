@@ -1,18 +1,16 @@
-using System;
-
 namespace WordCounter.Models
 {
   public class RepeatCounter
   {
     public string SearchFor { get; set; }
     public string Sentence { get; set; }
-    
+
     public RepeatCounter(string searchFor, string sentence)
     {
       SearchFor = searchFor.ToLower();
       Sentence = sentence.ToLower();
     }
-
+    
     public bool ContainsWord()
     {
       return Sentence.Contains(SearchFor);
@@ -20,8 +18,16 @@ namespace WordCounter.Models
 
     public int FindWord()
     {
-
-      return 10;
+      int matchCount = 0;
+      string[] sentenceArr = Sentence.Split(" ");
+      foreach (string word in sentenceArr)
+      {
+        if (word == SearchFor)
+        {
+          matchCount++;
+        }
+      }
+      return matchCount;
     }
     
   }
