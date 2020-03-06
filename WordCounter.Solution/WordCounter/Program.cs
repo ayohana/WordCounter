@@ -1,8 +1,8 @@
 // using System;
 // using System.Collections.Generic;
-using ProjectName.Models;
+using WordCounter.Models;
 
-namespace ProjectName
+namespace WordCounter
 {
   public class Program
   {

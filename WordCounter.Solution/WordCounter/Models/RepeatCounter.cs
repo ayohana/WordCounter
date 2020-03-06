@@ -1,6 +1,6 @@
-namespace ProjectName.Models
+namespace WordCounter.Models
 {
-  public class ClassName
+  public class RepeatCounter
   {
     // properties, constructors, methods, etc. go here
     
