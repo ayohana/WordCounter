@@ -99,21 +99,21 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void CheckWordInput_ReturnsTrueForSingleWordInput_Boolean()
+    public void IsInvalidInput_ReturnsFalseForSingleWordInput_Boolean()
     {
       RepeatCounter newRepeatCounter = new RepeatCounter("cat", "My black cat loves me");
-      bool actual = newRepeatCounter.CheckWordInput();
+      bool actual = newRepeatCounter.IsInvalidInput();
 
-      Assert.IsTrue(actual);
+      Assert.IsFalse(actual);
     }
 
     [TestMethod]
-    public void CheckWordInput_ReturnsFalseForMultipleWordsInput_Boolean()
+    public void IsInvalidInput_ReturnsTrueForMultipleWordsInput_Boolean()
     {
       RepeatCounter newRepeatCounter = new RepeatCounter("black cat", "My black cat loves me");
-      bool actual = newRepeatCounter.CheckWordInput();
+      bool actual = newRepeatCounter.IsInvalidInput();
 
-      Assert.IsFalse(actual);
+      Assert.IsTrue(actual);
     }
 
   }
