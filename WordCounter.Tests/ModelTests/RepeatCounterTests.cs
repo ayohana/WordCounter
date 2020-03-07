@@ -94,40 +94,40 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void IsInvalidInput_ReturnsFalseForSingleWordInput_Boolean()
+    public void IsValidInput_ReturnsTrueForSingleWordInput_Boolean()
     {
       RepeatCounter newRepeatCounter = new RepeatCounter("cat", "My black cat loves me");
-      bool actual = newRepeatCounter.IsInvalidInput();
+      bool actual = newRepeatCounter.IsValidInput();
+
+      Assert.IsTrue(actual);
+    }
+
+    [TestMethod]
+    public void IsValidInput_ReturnsFalseForMultipleWordsInput_Boolean()
+    {
+      RepeatCounter newRepeatCounter = new RepeatCounter("black cat", "My black cat loves me");
+      bool actual = newRepeatCounter.IsValidInput();
 
       Assert.IsFalse(actual);
     }
 
     [TestMethod]
-    public void IsInvalidInput_ReturnsTrueForMultipleWordsInput_Boolean()
-    {
-      RepeatCounter newRepeatCounter = new RepeatCounter("black cat", "My black cat loves me");
-      bool actual = newRepeatCounter.IsInvalidInput();
-
-      Assert.IsTrue(actual);
-    }
-
-    [TestMethod]
-    public void IsInvalidInput_ReturnsTrueForEmptyString_Boolean()
+    public void IsValidInput_ReturnsFalseForEmptyString_Boolean()
     {
       RepeatCounter newRepeatCounter = new RepeatCounter("", "My black cat loves me");
-      bool actual = newRepeatCounter.IsInvalidInput();
+      bool actual = newRepeatCounter.IsValidInput();
 
-      Assert.IsTrue(actual);
+      Assert.IsFalse(actual);
     }
 
     [Ignore]
-    public void IsInvalidInput_ReturnsTrueForNull_Boolean()
+    public void IsValidInput_ReturnsFalseForNull_Boolean()
     {
-      var testNull = (dynamic)null; // Fail to initialize a variable of null
+      var testNull = (dynamic)null; // Unable to initialize a variable of null
       RepeatCounter newRepeatCounter = new RepeatCounter(testNull, "My black cat loves me");
-      bool actual = newRepeatCounter.IsInvalidInput();
+      bool actual = newRepeatCounter.IsValidInput();
 
-      Assert.IsTrue(actual);
+      Assert.IsFalse(actual);
     }
   }
 }
