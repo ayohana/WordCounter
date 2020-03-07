@@ -1,4 +1,4 @@
-# [Word Counter](https://github.com/ayohana/WordCounter.git/)
+# [Word Counter](https://github.com/ayohana/WordCounter.Solution.git/)
 
 #### Intermediate C# & Testing Exercise for [Epicodus](https://www.epicodus.com/), 03.06.2020
 
@@ -49,7 +49,7 @@
 ## Setup/Installation Requirements
 
 * Download [.NET Core](https://dotnet.microsoft.com/download/dotnet-core/)
-* Clone this [repository](https://github.com/ayohana/WordCounter.git/)
+* Clone this [repository](https://github.com/ayohana/WordCounter.Solution.git/)
 * Open the `Command Line Interface`.
   * Navigate into the `WordCounter` directory.
     * Type in the command `dotnet restore` to gather tools and dependencies for the application.
