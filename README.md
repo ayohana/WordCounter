@@ -7,10 +7,24 @@
 ## Description
 
 **This C# console application counts how frequently a word appears in a sentence.** A user will be able to enter a word and a sentence. The application will check for **_full word matches_** and show the number of matches. Examples:
-* A user enters the word _"cat"_ and sentence _"My black cat loves me."_
+* A user enters the word _"cat"_ and sentence _"My black cat loves me"_
   - The application will show _1 match result for "cat"_.
-* A user enters the word _"cat"_ and sentence _"I'm walking to the cathedral."_
+* A user enters the word _"cat"_ and sentence _"I'm walking to the cathedral"_
   - The application will show _0 match result for "cat"_.
+
+## Screenshots
+
+#### Example of using the application:
+![A screenshot of a dotnet run of the Word Counter](./img/RunApp.JPG/)
+
+#### When a user enters multiple words to search for:
+![A screenshot of an invalid word input](./img/InvalidInput.JPG/)
+
+#### Search results are for _full word matches_ only:
+![A screenshot of search results](./img/FullWordMatches.JPG/)
+
+#### User can choose to exit the application:
+![A screenshot of option to exit](./img/ExitApp.JPG/)
 
 ## Specs
 
